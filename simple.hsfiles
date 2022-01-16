@@ -51,3 +51,9 @@ tests:
 resolver: lts-18.16
 
 extra-deps:
+
+
+{-# START_FILE .gitignore #-}
+.stack-work/
+{{name}}.cabal
+*.env
