@@ -1,7 +1,7 @@
 {-# START_FILE README.md #-}
 # {{name}}
 
-{-# START_FILE src/Main.hs #-}
+{-# START_FILE app/Main.hs #-}
 module Main where
 
 main :: IO ()
