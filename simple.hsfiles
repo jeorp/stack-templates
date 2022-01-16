@@ -32,7 +32,6 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
-    dependencies:  
 
 tests:
   {{name}}-test:
@@ -42,7 +41,6 @@ tests:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
-    dependencies:
 
 
 {-# START_FILE stack.yaml #-}
