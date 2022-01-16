@@ -12,6 +12,7 @@ main = do
 {-# OPTIONS_GHC -F -pgmF hspec-discover #-}
 
 {-# START_FILE package.yaml #-}
+
 name: {{name}}
 dependencies:
 - base
@@ -19,17 +20,30 @@ dependencies:
 - bytestring
 - mtl
 - hspec
-  
-ghc-options:
-- -Wall
-- -Wcompat
-- -Wincomplete-uni-patterns
-- -Wincomplete-record-updates
-- -Wnoncanonical-monad-instances
-- -Wredundant-constraints
-- -Wtabs
 
-library: {}
+library:
+  source-dirs: src
+
+executables:
+  {{name}}-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:  
+
+tests:
+  {{name}}-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+
 
 {-# START_FILE stack.yaml #-}
 resolver: lts-18.16
